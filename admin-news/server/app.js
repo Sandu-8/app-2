@@ -17,6 +17,7 @@ app.use('/post-news', (req, res) => {
     .post(`https://rlpvi3pk9b.execute-api.us-east-1.amazonaws.com/testare`, req.body, {
       headers: {"Content-Type": "application/json", "Accept": "*/*", "Connection": "keep-alive", "Access-Control-Allow-Origin": "*"},
     });
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).send(data);
   } catch {
     res.status(401).send('Unauthorized');
